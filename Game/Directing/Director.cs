@@ -25,18 +25,46 @@ namespace CSE210-Greed.directing.Game{
         }
         
         // pulls the users inputs
-        public void GetInputs{
-            Console.WriteLine("getting inputs");
-            Actor robot = cast.GetFirstActor("robot");
+        public void GetInputs(){
+            // call user
+            Actor User = cast.GetFirstActor("user");
+            // gets keyboard services
             Point velocity = keyboardService.GetDirection();
-            robot.SetVelocity(velocity);     
+            // sets the direction for user
+            user.SetVelocity(velocity);     
         }
-        public void SetUpdates{
-            Console.WriteLine("setting updates");
+        public void SetUpdates(){
+
+            Actor banner = cast.GetFirstActor("banner");
+            Actor robot = cast.GetFirstActor("robot");
+            List<Actor> artifacts = cast.GetActors("artifacts");
+
+            banner.SetText("");
+            int maxX = videoService.GetWidth();
+            int maxY = videoService.GetHeight();
+            User.MoveNext(maxX, maxY);
+
+            foreach (Actor actor in artifacts)
+            {
+                if (robot.GetPosition().Equals(actor.GetPosition()))
+                {
+                    Artifact artifact = (Artifact) actor;
+                    if (Artifact.GetIntention() = bad){
+                        // points equals minus one
+                    }
+                    if (Artifact.GetIntention() = good){
+                        // points equal plus one
+                    }
+                }
+            } 
 
         }
-        public void PushOutputs{
-            Console.WriteLine("push outputs");
+        public void PushOutputs(){
+
+            List<Actor> actors = cast.GetAllActors();
+            videoService.ClearBuffer();
+            videoService.DrawActors(actors);
+            videoService.FlushBuffer();
 
         }
     }
