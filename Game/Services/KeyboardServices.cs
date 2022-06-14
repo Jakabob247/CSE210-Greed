@@ -3,7 +3,7 @@ using Raylib_cs;
 using CSE210_Greed.Game.Casting;
 
 
-namespace CSE210_Greed
+namespace CSE210_Greed.Game.Services
 {
     /// <summary>
     /// <para>Detects player input.</para>
