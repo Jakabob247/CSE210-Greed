@@ -1,5 +1,5 @@
 ///directing class for CSE210 greed game. -Eric Poole
-namespace CSE210-Greed.directing.Game{
+namespace CSE210_Greed.directing.Game{
 
     public class Director{
 

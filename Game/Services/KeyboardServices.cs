@@ -1,9 +1,9 @@
 /// temporary file copied from the rfk game. Will work on more, just want a basic working system
 using Raylib_cs;
-using Unit04.Game.Casting;
+using CSE210_Greed.Game.Casting;
 
 
-namespace CSE210-Greed
+namespace CSE210_Greed
 {
     /// <summary>
     /// <para>Detects player input.</para>
