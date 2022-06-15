@@ -26,7 +26,7 @@ namespace CSE210_Greed.Game.Casting
         /// </summary>
         /// <param name="group">The group name.</param>
         /// <param name="actor">The actor to add.</param>
-        private void AddActor(string group, Actor actor)
+        public void AddActor(string group, Actor actor)
         {
             if (!actors.ContainsKey(group))
             {

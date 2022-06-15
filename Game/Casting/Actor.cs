@@ -6,9 +6,11 @@ namespace CSE210_Greed.Game.Casting
    public class Actor
    {
       private string text = "";
+      
       private Point position = new Point(0,0);
       private Point velocity = new Point(0,0);
-      private Color color = Constants.WHITE;
+      private Color color = new Color(255, 255, 255);
+      // private Color color = Constants.WHITE;
       private int fontSize = 15;
 
 
@@ -48,7 +50,10 @@ namespace CSE210_Greed.Game.Casting
       {
          return text;
       }
-
+      public int GetFontSize()
+        {
+            return fontSize;
+        }
 
       /*
       summary: Gets tehe object of the velocity

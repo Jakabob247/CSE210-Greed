@@ -7,7 +7,8 @@ namespace CSE210_Greed.Game.Casting
       public Rock()
       {
          SetText("O");
-         SetColor(Constants.BLUE);
+         SetColor(new Color(255, 255, 255));
+         // SetColor(Constants.BLUE);
       }
 
    }

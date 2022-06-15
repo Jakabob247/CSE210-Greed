@@ -7,7 +7,8 @@ namespace CSE210_Greed.Game.Casting
       public Player()
       {
          SetText("#");
-         SetColor(Constants.WHITE);
+         SetColor(new Color(255, 255, 255));
+         // SetColor(Constants.WHITE);
       }
 
    }

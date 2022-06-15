@@ -7,8 +7,9 @@ namespace CSE210_Greed.Game.Casting
       public Gem()
       {
          SetText("*");
-         SetColor(Constants.RED);
-         Reset();
+         SetColor(new Color(255, 255, 255));
+                  // SetColor(Constants.RED);
+         // Reset();
       }
 
    }
