@@ -5,10 +5,10 @@ using CSE210_Greed.Game.Casting;
 namespace CSE210_Greed.Game.Directing{
 
     public class Director{
-
+        private int POINTS = 0;
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
-            private static int FRAME_RATE = 22;
+        private static int FRAME_RATE = 22;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
@@ -16,7 +16,7 @@ namespace CSE210_Greed.Game.Directing{
         private static int COLS = 60;
         private static int ROWS = 40;
         private static string CAPTION = "Greed";
-      //   private static string DATA_PATH = "Data/messages.txt";
+        // private static string DATA_PATH = "Data/messages.txt";
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
 
@@ -52,7 +52,7 @@ namespace CSE210_Greed.Game.Directing{
                 
         }
         public void SetUpdates(Cast cast){
-
+            Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             List<Actor> artifacts = cast.GetActors("artifacts");
 
@@ -67,7 +67,15 @@ namespace CSE210_Greed.Game.Directing{
                 string text = ((char)random.Next(33, 126)).ToString();
                //  string message = messages[i];
 
-
+             foreach (Actor actor in artifacts){
+                if (robot.GetPosition().Equals(actor.GetPosition()))
+                {
+                    Artifact artifact = (Artifact) actor;
+                    POINTS += 1;
+                    banner.SetText("POINTS:" + POINTS.ToString());
+                    banner.SetText("hello wo");
+                }
+            } 
                 int x = random.Next(1, COLS);
                 int y = 0;
                //  int y = random.Next(1, ROWS);
@@ -98,6 +106,8 @@ namespace CSE210_Greed.Game.Directing{
                //  artifact.SetMessage(message);
                cast.AddActor("artifacts", artifact);
                }
+
+
             foreach(Actor i in cast.GetActors("artifacts"))
             {
                 Point direction = new Point(0, 1);
@@ -106,6 +116,7 @@ namespace CSE210_Greed.Game.Directing{
                 i.SetVelocity(direction);
                 i.MoveNext(maxX, maxY);
             }
+
         // }
         }
 
