@@ -14,7 +14,7 @@ namespace CSE210_Greed.Game.Directing{
         }
 
         ///start game function allows you to start game and calls the different aspects of the game.
-        public void StartGame(Cast cast){
+        public void StartGame(){
             videoService.OpenWindow();
             while (videoService.IsWindowOpen()){
                 GetInputs();
