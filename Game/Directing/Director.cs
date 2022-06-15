@@ -45,11 +45,14 @@ namespace CSE210_Greed.Game.Directing{
             // gets keyboard services
             Point velocity = keyboardService.GetDirection();
             // sets the direction for user
-            robot.SetVelocity(velocity);     
+            robot.SetVelocity(velocity); 
+
+
+
+                
         }
         public void SetUpdates(Cast cast){
 
-            // Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             List<Actor> artifacts = cast.GetActors("artifacts");
 
@@ -95,7 +98,14 @@ namespace CSE210_Greed.Game.Directing{
                //  artifact.SetMessage(message);
                cast.AddActor("artifacts", artifact);
                }
-
+            foreach(Actor i in cast.GetActors("artifacts"))
+            {
+                Point direction = new Point(0, 1);
+                direction = direction.Scale(15);
+                // Point velocity = keyboardService.GetDirection();
+                i.SetVelocity(direction);
+                i.MoveNext(maxX, maxY);
+            }
         // }
         }
 
