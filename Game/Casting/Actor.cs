@@ -3,7 +3,7 @@ using CSE210_Greed.Game.Services;
 
 namespace CSE210_Greed.Game.Casting
 {
-   class Actor
+   public class Actor
    {
       private Point position = new Point(0,0);
       private Point velocity = new Point(0,0);
