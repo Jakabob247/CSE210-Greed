@@ -69,9 +69,18 @@ namespace CSE210_Greed{
                 int b = random.Next(0, 256);
                 Color color = new Color(r, g, b);
                
-               if (true)
+               if (random.Next(0, 2) == 1)
                {
                Gem artifact = new Gem();
+               //  artifact.SetText(text);
+               artifact.SetFontSize(FONT_SIZE);
+               //  artifact.SetColor(color);
+               artifact.SetPosition(position);
+               //  artifact.SetMessage(message);
+               cast.AddActor("artifacts", artifact);
+               }
+               else{
+               Rock artifact = new Rock();
                //  artifact.SetText(text);
                artifact.SetFontSize(FONT_SIZE);
                //  artifact.SetColor(color);
