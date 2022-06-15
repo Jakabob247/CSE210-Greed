@@ -101,7 +101,7 @@ namespace CSE210_Greed.Game.Directing{
             foreach(Actor i in cast.GetActors("artifacts"))
             {
                 Point direction = new Point(0, 1);
-                direction = direction.Scale(15);
+                direction = direction.Scale(CELL_SIZE);
                 // Point velocity = keyboardService.GetDirection();
                 i.SetVelocity(direction);
                 i.MoveNext(maxX, maxY);
