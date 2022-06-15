@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace CSE210_Greed.Game.Services
+namespace CSE210_Greed.Game.Casting
 {
     /// <summary>
     /// <para>A color.</para>

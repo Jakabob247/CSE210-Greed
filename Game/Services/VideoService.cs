@@ -158,7 +158,7 @@ namespace CSE210_Greed.Game.Services
         /// </summary>
         /// <param name="color">The color to convert.</param>
         /// <returns>A Raylib color.</returns>
-        private Raylib_cs.Color ToRaylibColor(Casting.Color color)
+        private Raylib_cs.Color ToRaylibColor(CSE210_Greed.Game.Casting.Color color)
         {
             int r = color.GetRed();
             int g = color.GetGreen();

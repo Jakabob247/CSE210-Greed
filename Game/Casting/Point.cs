@@ -1,4 +1,4 @@
-namespace CSE210_Greed.Game.Services
+namespace CSE210_Greed.Game.Casting
 {
     /// <summary>
     /// <para>A distance from a relative origin (0, 0).</para>
