@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace;
+﻿namespace CSE210_Greed;
 
 public class Point
 {
