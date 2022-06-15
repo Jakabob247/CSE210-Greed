@@ -4,11 +4,11 @@ namespace CSE210_Greed.Game.Casting
 {
    class Player : Actor
    {
-      private char shape = '#';
-
-      public char GetShape()
+      public Player()
       {
-         return shape;
+         SetText("#");
+         SetColor(Constants.WHITE);
       }
+
    }
 }

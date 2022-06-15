@@ -4,11 +4,12 @@ namespace CSE210_Greed.Game.Casting
 {
    class Gem : Actor
    {
-      private char shape = '*';
-
-      public char GetShape()
+      public Gem()
       {
-         return shape;
+         SetText("*");
+         SetColor(Constants.RED);
+         Reset();
       }
+
    }
 }

@@ -5,9 +5,10 @@ namespace CSE210_Greed.Game.Casting
 {
    class Actor
    {
+      private string text = "";
       private Point position = new Point(0,0);
       private Point velocity = new Point(0,0);
-      private Color color = new Color(255,255,255);
+      private Color color = Constants.WHITE;
       private int fontSize = 15;
 
 
@@ -36,6 +37,16 @@ namespace CSE210_Greed.Game.Casting
       public Point GetPosition()
       {
          return position;
+      }
+
+
+      /// <summary>
+      /// Gets the actor's text.
+      /// </summary>
+      /// <returns>The text.</returns>
+      public string GetText()
+      {
+         return text;
       }
 
 
@@ -115,6 +126,21 @@ namespace CSE210_Greed.Game.Casting
                throw new ArgumentException("velocity can't be null");
          }
          this.velocity = velocity;
+      }
+
+
+      /// <summary>
+      /// Sets the actor's text to the given value.
+      /// </summary>
+      /// <param name="text">The given text.</param>
+      /// <exception cref="ArgumentException">When text is null.</exception>
+      public void SetText(string text)
+      {
+         if (text == null)
+         {
+               throw new ArgumentException("text can't be null");
+         }
+         this.text = text;
       }
 
 
