@@ -10,7 +10,6 @@ namespace CSE210_Greed.Game.Casting
       private Point position = new Point(0,0);
       private Point velocity = new Point(0,0);
       private Color color = new Color(255, 255, 255);
-      // private Color color = Constants.WHITE;
       private int fontSize = 15;
 
 
@@ -51,9 +50,9 @@ namespace CSE210_Greed.Game.Casting
          return text;
       }
       public int GetFontSize()
-        {
-            return fontSize;
-        }
+      {
+         return fontSize;
+      }
 
       /*
       summary: Gets tehe object of the velocity
@@ -114,7 +113,7 @@ namespace CSE210_Greed.Game.Casting
       {
          if (position == null)
          {
-               throw new ArgumentException("position can't be null");
+            throw new ArgumentException("position can't be null");
          }
          this.position = position;
       }
@@ -128,7 +127,7 @@ namespace CSE210_Greed.Game.Casting
       {
          if (velocity == null)
          {
-               throw new ArgumentException("velocity can't be null");
+            throw new ArgumentException("velocity can't be null");
          }
          this.velocity = velocity;
       }
@@ -143,7 +142,7 @@ namespace CSE210_Greed.Game.Casting
       {
          if (text == null)
          {
-               throw new ArgumentException("text can't be null");
+            throw new ArgumentException("text can't be null");
          }
          this.text = text;
       }

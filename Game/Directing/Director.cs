@@ -8,7 +8,7 @@ namespace CSE210_Greed.Game.Directing{
         private int POINTS = 0;
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
-        private static int FRAME_RATE = 22;
+        private static int FRAME_RATE = 60;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
         private static int CELL_SIZE = 15;
@@ -49,25 +49,21 @@ namespace CSE210_Greed.Game.Directing{
 
 
 
-                
         }
         public void SetUpdates(Cast cast){
             Actor banner = cast.GetFirstActor("banner");
             Actor robot = cast.GetFirstActor("robot");
             List<Actor> artifacts = cast.GetActors("artifacts");
 
-            // banner.SetText("");
             int maxX = videoService.GetWidth();
             int maxY = videoService.GetHeight();
             robot.MoveNext(maxX, maxY);
 
             Random random = new Random();
-            // for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
-            // {
-                string text = ((char)random.Next(33, 126)).ToString();
-               //  string message = messages[i];
 
-             foreach (Actor actor in artifacts){
+                string text = ((char)random.Next(33, 126)).ToString();
+
+            foreach (Actor actor in artifacts){
                 if (robot.GetPosition().Equals(actor.GetPosition()))
                 {
                     Artifact artifact = (Artifact) actor;
@@ -78,7 +74,6 @@ namespace CSE210_Greed.Game.Directing{
             } 
                 int x = random.Next(1, COLS);
                 int y = 0;
-               //  int y = random.Next(1, ROWS);
                 Point position = new Point(x, y);
                 position = position.Scale(CELL_SIZE);
 
@@ -86,38 +81,40 @@ namespace CSE210_Greed.Game.Directing{
                 int g = random.Next(0, 256);
                 int b = random.Next(0, 256);
                 Color color = new Color(r, g, b);
-               
-               if (random.Next(0, 2) == 1)
-               {
-               Gem artifact = new Gem();
-               //  artifact.SetText(text);
-               artifact.SetFontSize(FONT_SIZE);
+                
+                // Adds gem to the cast list
+                if (random.Next(0, 2) == 1 && cast.GetAllActors().Count <= 60)
+                {
+                Gem artifact = new Gem();
+
+                artifact.SetFontSize(FONT_SIZE);
                 artifact.SetColor(color);
-               artifact.SetPosition(position);
-               //  artifact.SetMessage(message);
-               cast.AddActor("artifacts", artifact);
-               }
-               else{
-               Rock artifact = new Rock();
-               //  artifact.SetText(text);
-               artifact.SetFontSize(FONT_SIZE);
-                artifact.SetColor(color);
-               artifact.SetPosition(position);
-               //  artifact.SetMessage(message);
-               cast.AddActor("artifacts", artifact);
-               }
+                artifact.SetPosition(position);
+
+                cast.AddActor("artifacts", artifact);
+                }
+                else if (cast.GetAllActors().Count <= 60)
+                {
+                // Adds rock to the cast list
+                Rock artifact = new Rock();
+
+                artifact.SetFontSize(FONT_SIZE);
+                    artifact.SetColor(color);
+                artifact.SetPosition(position);
+
+                cast.AddActor("artifacts", artifact);
+                }
 
 
             foreach(Actor i in cast.GetActors("artifacts"))
             {
                 Point direction = new Point(0, 1);
                 direction = direction.Scale(CELL_SIZE);
-                // Point velocity = keyboardService.GetDirection();
+
                 i.SetVelocity(direction);
                 i.MoveNext(maxX, maxY);
             }
 
-        // }
         }
 
         public void PushOutputs(Cast cast){
